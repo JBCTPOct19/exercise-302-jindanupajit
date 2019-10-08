@@ -33,7 +33,7 @@ public class TaskController {
     public String taskNewProcessForm(@Valid Task task, BindingResult result) {
 
         if (result.hasErrors()) {
-            System.out.print("heres the error");
+            System.out.print("result error: "+result.toString());
            return "task_new"; }
 
         taskRepository.save(task);

@@ -14,7 +14,9 @@ import java.sql.Date;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @NotNull
+    //@NotNull <-- This create validation error below
+    // org.springframework.validation.BeanPropertyBindingResult: 1 errors
+    // Field error in object 'task' on field 'id': rejected value [null]; codes [NotNull.task.id,NotNull.id,NotNull.java.lang.Long,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [task.id,id]; arguments []; default message [id]]; default message [must not be null]
     private Long id;
 
     @NotNull
